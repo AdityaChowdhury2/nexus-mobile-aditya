@@ -1,37 +1,16 @@
-import { useState } from 'react';
-
-import RangeSlider from 'react-range-slider-input';
 import 'react-range-slider-input/dist/style.css';
 
 import BrandFIlter from './BrandFilter/BrandFilter';
 import OSFilter from './OSFilter/OSFilter';
 import RamFilter from './RamFilter/RamFilter';
+import PriceFilter from './PriceFilter/PriceFilter';
 
 const FilterSidebar = () => {
-	const [range, setRange] = useState({
-		minValue: 10000,
-		maxValue: 50000,
-	});
-
 	return (
 		<div className="w-5/12 lg:w-2/12 p-3">
 			<h3 className="text-xl">Filter Products</h3>
 			<div className="space-y-4">
-				<div className="">
-					<h5 className="text-xl ">Price</h5>
-					<p className="my-2">{range.minValue + ' - ' + range.maxValue}</p>
-					<div className="w-full mx-auto">
-						<RangeSlider
-							min={1000}
-							max={50000}
-							step={1000}
-							defaultValue={[range.minValue, range.maxValue]}
-							onInput={value => {
-								setRange({ ...range, minValue: value[0], maxValue: value[1] });
-							}}
-						/>
-					</div>
-				</div>
+				<PriceFilter />
 				<BrandFIlter />
 				<RamFilter />
 				<OSFilter />
