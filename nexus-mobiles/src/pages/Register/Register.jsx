@@ -67,7 +67,7 @@ const Register = () => {
 			) : (
 				<>
 					<Helmet>
-						<title>Majesty Royal || Registration</title>
+						<title>Nexus Mobile || Registration</title>
 					</Helmet>
 					<CustomNavbar />
 					<div className="min-w-screen min-h-[85vh]  flex items-center justify-center px-5 py-5">
@@ -174,7 +174,7 @@ const Register = () => {
 										</div>
 										<div className="flex -mx-3">
 											<div className="w-full px-3 mb-5">
-												<button className="block w-full max-w-xs mx-auto bg-[var(--primary-color)] hover:bg-[#b89470] focus:bg-[var(--primary-color)] text-white rounded-lg px-3 py-3 font-semibold font-gilda-display">
+												<button className="block w-full max-w-xs mx-auto bg-[var(--primary-color)] hover:bg-[var(--primary-color-dark)] focus:bg-[var(--primary-color)] text-white rounded-lg px-3 py-3 font-semibold font-gilda-display">
 													REGISTER NOW
 												</button>
 											</div>

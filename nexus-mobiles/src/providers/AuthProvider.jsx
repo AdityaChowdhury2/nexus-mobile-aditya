@@ -51,7 +51,7 @@ const AuthProvider = ({ children }) => {
 
 	const googleProvider = new GoogleAuthProvider();
 
-	const createUser = (email, password) => {
+	const createUser = ({ email, password }) => {
 		setLoading(true);
 		return createUserWithEmailAndPassword(auth, email, password);
 	};

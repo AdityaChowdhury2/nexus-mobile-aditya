@@ -1,9 +1,12 @@
 const express = require('express');
 const globalErrorHandler = require('./utils/globalErrorHandler/globalErrorHandler');
-const productRouter = require('./routes/productRouter')
+const productRouter = require('./routes/productRouter');
+const applyMiddleware = require('./middlewares/applymiddleware');
 
 
 const app = express();
+
+applyMiddleware(app);
 
 app.use(productRouter);
 

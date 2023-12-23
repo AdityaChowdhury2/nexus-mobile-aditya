@@ -23,10 +23,12 @@ const CustomNavbar = () => {
 					<Logo />
 				</Link>
 			</div>
-			<div className="navbar-center hidden lg:flex">
-				<ul className="menu menu-horizontal px-1">{navList}</ul>
-			</div>
+			{/* <div className="navbar-center hidden lg:flex"> */}
+			{/* </div> */}
 			<div className="navbar-end">
+				<div className="hidden lg:flex">
+					<ul className="menu menu-horizontal px-1">{navList}</ul>
+				</div>
 				<div className="dropdown dropdown-end mr-2">
 					<div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
 						<MdMenu size={22} />
@@ -52,7 +54,13 @@ const CustomNavbar = () => {
 							className="btn btn-ghost btn-circle avatar"
 						>
 							<div className="w-10 rounded-full">
-								<img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+								<img
+									alt={user?.displayName}
+									src={
+										user?.photoURL ||
+										'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
+									}
+								/>
 							</div>
 						</div>
 						<ul
