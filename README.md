@@ -22,6 +22,19 @@ Follow these steps to set up and run the project locally:
    ```
    npm run dev
    ```
+   ⚠ 🚧please add your own firebase projects auth details as below format in .env.local file🚧⚠
+
+**.env.local**
+
+```
+VITE_APIKEY= "addyourownapikey"
+VITE_AUTHDOMAIN= "addyourownauthdomain"
+VITE_PROJECTID= "addyourownprojectid"
+VITE_STORAGEBUCKET= "addyourownstoragebucket"
+VITE_MESSAGINGSENDERID= "addyourownmessaginsenderid"
+VITE_APPID= "addyourownappid"
+VITE_SERVER_URL= https://nexus-mobile-server.vercel.app
+```
 
 Open your browser and visit http://localhost:5173 to view the app.
 
