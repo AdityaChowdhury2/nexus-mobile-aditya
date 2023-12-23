@@ -13,7 +13,9 @@ const OSFilter = () => {
 
 	return (
 		<div>
-			<h5 className="text-xl ">OS</h5>
+			<h5 className="text-xl ">
+				OS <span className="text-red-900 font-bold text-sm">(Not Working)</span>
+			</h5>
 			<ul className="h-36 overflow-y-auto space-y-2 border [&>*:last-child]:border-none">
 				{OS?.map((os, idx) => {
 					return (

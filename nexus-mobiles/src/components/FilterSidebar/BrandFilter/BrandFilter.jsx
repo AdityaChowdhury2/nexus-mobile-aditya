@@ -1,6 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import useAxios from '../../../hooks/useAxios';
+import { useEffect, useState } from 'react';
+import qs from 'query-string';
+import { useSearchParams } from 'react-router-dom';
+
 const BrandFIlter = () => {
+	const [checked, setChecked] = useState([]);
+	const [params, setParams] = useSearchParams();
+
 	const axios = useAxios();
 	const { data: brands } = useQuery({
 		queryKey: ['brands'],
@@ -9,11 +16,28 @@ const BrandFIlter = () => {
 			return response.data;
 		},
 	});
+	const handleChange = e => {
+		if (e.target.checked) {
+			setChecked([...checked, e.target.value]);
+		} else {
+			setChecked(checked.filter(brand => brand !== e.target.value));
+		}
+	};
+
+	useEffect(() => {
+		let currentQuery = {};
+		if (params.size) {
+			currentQuery = qs.parse(params.toString());
+		}
+
+		setParams({ ...currentQuery, brand: checked });
+	}, [checked, params, setParams]);
 
 	return (
 		<div>
 			<h5 className="text-xl ">Brand</h5>
-			<ul className="h-36 overflow-y-auto space-y-2 border [&>*:last-child]:border-none">
+			{/* h-36 overflow-y-auto */}
+			<ul className="h-56 overflow-y-auto space-y-2 border [&>*:last-child]:border-none">
 				{brands?.map((brand, idx) => (
 					<li
 						key={idx}
@@ -21,11 +45,9 @@ const BrandFIlter = () => {
 					>
 						<input
 							type="checkbox"
-							name={brand}
+							value={brand}
 							className="checkbox checkbox-xs"
-							onChange={e => {
-								console.log(e.target.checked, e.target.name);
-							}}
+							onChange={handleChange}
 						/>
 						{brand}
 					</li>

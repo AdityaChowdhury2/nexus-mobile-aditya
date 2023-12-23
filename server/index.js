@@ -1,8 +1,7 @@
-
+const app = require('./src/server');
 require('dotenv').config();
 const http = require("http");
-const connectDb = require("./src/db/connectDB");
-const app = require('./src/server');
+const connectDb = require('./src/db/connectDb')
 
 
 const server = http.createServer(app);

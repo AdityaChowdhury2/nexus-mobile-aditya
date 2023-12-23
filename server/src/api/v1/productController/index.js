@@ -8,6 +8,18 @@ const findProducts = async (req, res, next) => {
         const query = req.query
         console.log(query);
         const filter = {};
+        if (query?.brand) {
+            if (Array.isArray(query?.brand)) {
+                // let numberArray = query.ram.map(Number)
+                filter.brand = {
+                    $in: query?.brand
+                }
+            }
+            else {
+                filter.brand =
+                    query?.brand
+            }
+        }
         if (query?.minPrice && query?.maxPrice) {
             const minPrice = Number(query.minPrice)
             const maxPrice = Number(query.maxPrice)

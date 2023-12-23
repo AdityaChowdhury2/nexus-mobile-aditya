@@ -54,7 +54,6 @@ const RamFilter = () => {
 					>
 						<input
 							type="checkbox"
-							name={'ram'}
 							value={ram}
 							className="checkbox checkbox-xs"
 							onChange={handleChange}

@@ -15,7 +15,10 @@ const FilterSidebar = () => {
 				<RamFilter />
 				<OSFilter />
 				<div>
-					<h5 className="text-xl ">Processor</h5>
+					<h5 className="text-xl ">
+						Processor{' '}
+						<span className="text-red-900 font-bold text-sm">(Static)</span>
+					</h5>
 					<ul className="h-36 overflow-y-auto space-y-2 border [&>*:last-child]:border-none">
 						<li className="flex gap-2 items-center py-1 px-1 border-b-2">
 							<input

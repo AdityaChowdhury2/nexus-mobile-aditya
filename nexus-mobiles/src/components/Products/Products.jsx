@@ -2,13 +2,12 @@ import useGetProducts from '../../hooks/useGetProducts';
 
 const Products = () => {
 	const { mobiles } = useGetProducts();
-	// console.log(mobiles);
 	return (
 		<div className="w-full">
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
 				{mobiles?.map(item => {
 					return (
-						<div key={item._id} className="p-4 w-full">
+						<div key={item._id} className="p-4 w-full border rounded-lg">
 							<a className="block relative h-48 rounded overflow-hidden">
 								<img
 									alt="ecommerce"
@@ -24,6 +23,7 @@ const Products = () => {
 									{item.title}
 								</h2>
 								<p className="mt-1">${item.price}</p>
+								<button></button>
 							</div>
 						</div>
 					);
